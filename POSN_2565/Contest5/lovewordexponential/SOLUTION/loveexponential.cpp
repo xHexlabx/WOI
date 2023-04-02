@@ -4,7 +4,7 @@ using namespace std;
 
 const long long mod = 1e9 + 7 ;
 
-vector<vector<long long>> cross (vector<vector<long long>>a , vector<vector<long long>>b){
+vector<vector<long long>> mul (vector<vector<long long>>a , vector<vector<long long>>b){
 
     int i_size = a.size();
     int j_size = a[0].size() ;
@@ -37,7 +37,7 @@ int main(){
     power[1] = mat ;
     
     for(int i = 2 ; i < 64 ; i ++ ){
-        power[i] = cross(power[i - 1] , power[i - 1]) ;
+        power[i] = mul(power[i - 1] , power[i - 1]) ;
     }
 
     long long n ; cin >> n ; 
@@ -54,13 +54,13 @@ int main(){
 
     while(n){
         if(n & 1){
-            identity = cross(identity , power[cnt]) ;
+            identity = mul(identity , power[cnt]) ;
         }
         n >>= 1 ; 
         cnt ++ ;
     }
 
-    vector<vector<long long>>ans = cross(identity , { {1} , {1} , {1} , {1} }) ;
+    vector<vector<long long>>ans = mul(identity , { {1} , {1} , {1} , {1} }) ;
 
     cout << ans[3][0] ;
 
