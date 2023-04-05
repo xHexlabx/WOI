@@ -2,7 +2,7 @@
 
 using namespace std ;
 
-long long line [500002] ;
+long long line [1000002] ;
 long long q , n , s , p , MAX = INT_MIN , cnt = 0 ;
 
 int main(){
@@ -17,12 +17,12 @@ int main(){
         line[p + 1] -= n ;
     }
 
-    for(int i = 1 ; i < 500002 ; i ++ ){
+    for(int i = 1 ; i < 1000002 ; i ++ ){
         line[i] += line[i - 1] ;
         MAX = max(MAX , line[i]) ;
     }
 
-    for(int i = 1 ; i <= 500000 ; i ++ ){
+    for(int i = 1 ; i <= 1000000 ; i ++ ){
         if(line[i] == MAX)cnt ++ ;
     }
 
