@@ -8,9 +8,9 @@ struct coor {
 
 long long m , n , w  , q ;
 
-coor warp[601] ;
+coor warp[501] ;
 
-long long dp[601][601] ;
+long long dp[501][501] ;
 
 long long cal(coor src , coor dest){
     return abs(src.x - dest.x) + abs(src.y - dest.y) ;
