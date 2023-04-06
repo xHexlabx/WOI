@@ -28,7 +28,7 @@ long long closest(int l ,  int r){
     long long mid = (l + r) >> 1 ;
     long long dis = min(closest(l , mid) , closest(mid + 1 , r)) ;
 
-    long long ll = max((long long)0 , mid - 4) , rr = min(n - 1 , mid + 4);
+    long long ll = max((long long)0 , mid - 8) , rr = min(n - 1 , mid + 8);
 
     for(int i = ll ; i <= rr ; i ++ ){
         if(i == mid)continue ;
