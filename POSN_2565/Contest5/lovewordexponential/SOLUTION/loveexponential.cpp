@@ -30,8 +30,8 @@ int main(){
 
     ios_base :: sync_with_stdio(0) , cin.tie(0);
 
-    vector<vector<long long>>mat = { {1 , 1 , 1  ,1} , {1 , 0 , 0 , 0} , {0 , 1 , 0 , 0} , {0 , 0 , 1 , 0} } ;
-    vector<vector<long long>>identity = {{1 , 0 , 0 , 0} , {0 , 1 , 0 , 0} , {0 , 0 , 1 , 0} , {0 , 0 , 0 , 1}} ;
+    vector<vector<long long>>mat = { {1 , 1} , {1 , 0} } ;
+    vector<vector<long long>>identity = {{1 , 0} , {0  ,1} } ;
 
     power[0] = identity ;
     power[1] = mat ;
@@ -41,15 +41,15 @@ int main(){
     }
 
     long long n ; cin >> n ; 
-
-    n -- ;
     
-    if(n == 0){
-        vector<vector<long long>>ans = {{1} , {1} , {1} , {1}} ;
-        cout << ans[3][0] ;
+    if(n == 1 || n == 2){
+        vector<vector<long long>>ans = {{1} , {1}} ;
+        cout << ans[0][0] ;
         return 0 ;
     }
 
+    n -- ;
+    
     int cnt = 1 ;
 
     while(n){
@@ -60,9 +60,9 @@ int main(){
         cnt ++ ;
     }
 
-    vector<vector<long long>>ans = mul(identity , { {1} , {1} , {1} , {1} }) ;
+    vector<vector<long long>>ans = mul(identity , { {1} , {1} }) ;
 
-    cout << ans[3][0] ;
+    cout << ans[1][0] ;
 
     return 0 ;
 }
